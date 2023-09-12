@@ -22,8 +22,13 @@ stages:          # List of stages for jobs, and their order of execution
 #   - deploy
 
 build-job:       # This job runs in the build stage, which runs first.
+  image: docker:latest
+  services:
+    - "docker:dind"
   stage: build
   script:
+    - cd unit-testing-using-dotnet-test
+    - ls
     - docker compose up
 
 # unit-test-job:   # This job runs in the test stage.
