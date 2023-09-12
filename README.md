@@ -47,7 +47,7 @@ E. *"Wij gebruiken gewoon php's mail() functie. Ik heb even search all gedaan en
   - Backing service
     - Door met EFCore te werken, is het zelden nodig om de database code aan te passen bij het vervangen van de database. Het werkt nog steeds met dezelfde modellen en syntax om data te manipuleren. Als Postgres eruit zou gaan voor SQLite bijvoorbeeld, dan moet alleen de connectiestring verandert worden.
   - Build, Release, Run
-    - 
+    - TODO: Na implementatie van gitlab CI/CD invullen
   - Port binding
     - Lokaal is het met Docker containers nodig om de poort in te voeren om de API te benaderen. Als dezelfde containers worden uitgevoerd op een VSP server, is het direct te benaderen door de IP adres in te voeren. De poort is hierbij niet nodig.
  (Welke heb je aan gehouden? Welke zijn verbeterpunten (en hoe)? Bespreek minstens 4 v.d. 12)
