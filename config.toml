@@ -1,3 +1,9 @@
 [[runners]]
+    url = "https://gitlab.devops.aimsites.nl/"
+    executor = "docker"
     [runners.docker]
+        tls_verify = false
+        image = "docker:24.0.5"
         privileged = true
+        disable_cache = false
+        volumes = ["/certs/client", "/cache"]
