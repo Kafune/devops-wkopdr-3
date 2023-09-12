@@ -2,7 +2,44 @@
 
 ## Mermaid diagram over de CI pipeline
 Toon de gerialiseerde CI integratie als diagram.
+```mermaid
+sequenceDiagram
+    participant dt as Delivery team
+    participant vc as Version control
+    participant but as Build & unit tests
+    participant aat as Automated acceptance tests
+    participant uat as User acceptance tests
+    participant r as Release
+    activate dt
+    dt->>vc: Check in
+    deactivate dt
+    activate vc
+    vc->>but: Trigger
+    deactivate vc
+    activate but
+    alt red
+    but->>dt: Feedback
+    
+    else green
+    but->>aat: Trigger
+    activate aat
+    but->>dt: Feedback
+    deactivate but
+    alt red
+    aat->>dt: Feedback
 
+    else green
+    aat->>uat: Approval
+    deactivate aat
+    activate uat
+    uat->>dt: Feedback
+    uat->>r: Approval
+    deactivate uat
+    activate r
+    deactivate r
+    end
+    end
+```
 ## Theorie opdracht 12factor app
 
 De quote die wij hebben is:
