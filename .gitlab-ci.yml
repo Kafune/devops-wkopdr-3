@@ -24,8 +24,8 @@ variables:
 
 stages:          # List of stages for jobs, and their order of execution
   - build
-#   - test
-#   - deploy
+  - test
+  - deploy
 
 build-dotnet:       # This job runs in the build stage, which runs first.
   image: mcr.microsoft.com/dotnet/sdk:7.0-alpine
