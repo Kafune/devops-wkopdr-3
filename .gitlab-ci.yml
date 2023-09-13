@@ -21,7 +21,7 @@ default:
     - name: docker:24.0.5-dind
       alias: docker
   before_script:
-    - docker info
+    # - docker info
     - cd unit-testing-using-dotnet-test
 
 variables:
@@ -33,10 +33,9 @@ stages:          # List of stages for jobs, and their order of execution
 #   - deploy
 
 build-job:       # This job runs in the build stage, which runs first.
-  image: docker:latest
-
+  image: mcr.microsoft.com/dotnet/sdk:7.0-alpine
   services: 
-    - mcr.microsoft.com/dotnet/sdk:7.0-alpine
+    - docker:latest
   stage: build
   script:
     - dotnet restore
