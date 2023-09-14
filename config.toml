@@ -18,10 +18,10 @@ shutdown_timeout = 0
     MaxUploadedArchiveSize = 0
   [runners.docker]
     tls_verify = false
-    image = "docker:latest"
+    image = "docker:24.0.5"
     privileged = true
+    volumes = ["/certs/client", "/cache"]
     disable_entrypoint_overwrite = false
     oom_kill_disable = false
     disable_cache = false
-    volumes = ["/var/run/docker.sock:/var/run/docker.sock","/opt/gitlab-runner/cache:/cache:rw"]
     shm_size = 0
