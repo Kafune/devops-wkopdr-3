@@ -38,6 +38,7 @@ build-docker:
   stage: build
   variables:
     DOCKER_TLS_CERTDIR: ""
+    DOCKER_HOST: "tcp://docker:2375"
   script:
     - docker info
     - docker compose build
@@ -51,6 +52,9 @@ deploy-job:
   image: docker:latest
   stage: deploy
   environment: production
+  variables:
+    DOCKER_TLS_CERTDIR: ""
+    DOCKER_HOST: "tcp://docker:2375"
   script:
     - docker tag dotnet-app-image Kafune/unit-testing-using-dotnet-test-app:devops-wk-3
     - docker push dotnet-app-image Kafune/unit-testing-using-dotnet-test-app:devops-wk-3
