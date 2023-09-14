@@ -36,6 +36,8 @@ build-docker:
   services:
     - docker:dind
   stage: build
+  variables:
+    DOCKER_TLS_CERTDIR: ""
   script:
     - docker info
     - docker compose build
