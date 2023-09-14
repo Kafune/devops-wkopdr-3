@@ -19,9 +19,6 @@ default:
   before_script:
     - cd unit-testing-using-dotnet-test
 
-variables:
-  DOCKER_HOST: tcp://docker:2375
-
 stages:          # List of stages for jobs, and their order of execution
   - build
   - test

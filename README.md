@@ -26,6 +26,10 @@ sequenceDiagram
     deactivate but
     end
 ```
+
+```
+docker run --rm -it -v ~/config:/etc/gitlab-runner gitlab/gitlab-runner
+```
 ## Theorie opdracht 12factor app
 
 De quote die wij hebben is:
