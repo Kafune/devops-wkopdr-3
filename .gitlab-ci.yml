@@ -37,8 +37,7 @@ build-docker:
     - docker:24.0.5-dind
   stage: build
   variables:
-    DOCKER_TLS_CERTDIR: ""
-    DOCKER_HOST: "tcp://docker:2375"
+    DOCKER_TLS_CERTDIR: "/certs"
   script:
     - docker info
     - docker compose build
@@ -54,7 +53,6 @@ deploy-job:
   environment: production
   variables:
     DOCKER_TLS_CERTDIR: "/certs"
-    DOCKER_HOST: "tcp://docker:2375"
   script:
     - docker tag dotnet-app-image Kafune/unit-testing-using-dotnet-test-app:devops-wk-3
     - docker push dotnet-app-image Kafune/unit-testing-using-dotnet-test-app:devops-wk-3
