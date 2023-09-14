@@ -33,6 +33,10 @@ docker run -d --name gitlab-runner --restart always \
   -v /var/run/docker.sock:/var/run/docker.sock \
   gitlab/gitlab-runner:latest
 ```
+```
+docker run -d --name gitlab-runner --restart always   -v ~/config:/etc/gitlab-runner   -v /cert
+s/client   gitlab/gitlab-runner:latest
+```
 ## Theorie opdracht 12factor app
 
 De quote die wij hebben is:
