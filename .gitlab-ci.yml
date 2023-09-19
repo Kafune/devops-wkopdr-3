@@ -34,18 +34,15 @@ build-dotnet:       # This job runs in the build stage, which runs first.
     - dotnet publish -c release -o /app --no-restore
 
 build-docker:
-  services:
-    - name: docker:24.0.5-dind
-      alias: docker
-      command: [ "--tls=false" ]
+  image: mcr.microsoft.com/dotnet/sdk:7.0-alpine
   stage: build
   variables:
     DOCKER_HOST: tcp://docker:2375
     DOCKER_TLS_CERTDIR: ""
   script:
-    - docker info
-    - docker build -t unit-testing-using-dotnet-test-app -t kafune/unit-testing-using-dotnet-test-app:devops-wk-3 .
-    - docker build -t unit-testing-using-dotnet-test-postgres -t kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3 ./db_init
+    - dotnet restore
+    - dotnet publish -c release -o
+
 
 unit-test-job:
   image: mcr.microsoft.com/dotnet/sdk:7.0-alpine
@@ -66,6 +63,8 @@ deploy-job:
     DOCKER_HOST: tcp://docker:2375
     DOCKER_TLS_CERTDIR: ""
   script:
+    - docker build -t unit-testing-using-dotnet-test-app -t kafune/unit-testing-using-dotnet-test-app:devops-wk-3 .
+    - docker build -t unit-testing-using-dotnet-test-postgres -t kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3 ./db_init
     - docker push kafune/unit-testing-using-dotnet-test-app:devops-wk-3
     - docker push kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3
 
