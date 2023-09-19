@@ -20,8 +20,7 @@ image: docker:20.10.8
 default:
   before_script:
     - cd unit-testing-using-dotnet-test
-    - apt-get update
-    - apt-get install docker-compose-plugin
+
 stages:          # List of stages for jobs, and their order of execution
   - build
   - test
@@ -39,6 +38,8 @@ build-docker:
     - name: docker:20.10.8-dind
       alias: docker
       command: [ "--tls=false" ]
+    - name: docker/compose:1.23.2
+      entrypoint: [""]
   stage: build
   variables:
     DOCKER_HOST: tcp://docker:2375
