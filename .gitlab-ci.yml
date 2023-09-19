@@ -63,10 +63,10 @@ deploy-job:
     DOCKER_HOST: tcp://docker:2375
     DOCKER_TLS_CERTDIR: ""
   script:
-    - docker tag unit-testing-using-dotnet-test-app kafune/unit-testing-using-dotnet-test-app:devops-wk-3
-    - docker push unit-testing-using-dotnet-test-app kafune/unit-testing-using-dotnet-test-app:devops-wk-3
-    - docker tag unit-testing-using-dotnet-test-postgres kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3
-    - docker push unit-testing-using-dotnet-test-postgres kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3
+    - docker tag docker.io/library/unit-testing-using-dotnet-test-app kafune/unit-testing-using-dotnet-test-app:devops-wk-3
+    - docker push docker.io/library/unit-testing-using-dotnet-test-app kafune/unit-testing-using-dotnet-test-app:devops-wk-3
+    # - docker tag unit-testing-using-dotnet-test-postgres kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3
+    # - docker push unit-testing-using-dotnet-test-postgres kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3
 
 
 
