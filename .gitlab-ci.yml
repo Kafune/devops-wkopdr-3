@@ -44,8 +44,8 @@ build-docker:
     DOCKER_TLS_CERTDIR: ""
   script:
     - docker info
-    - docker build -t unit-testing-using-dotnet-test-app -t kafune/unit-testing-using-dotnet-test-app:devops-wk-3
-    - docker build -t unit-testing-using-dotnet-test-postgres -t kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3
+    - docker build -t unit-testing-using-dotnet-test-app -t kafune/unit-testing-using-dotnet-test-app:devops-wk-3 .
+    - docker build -t unit-testing-using-dotnet-test-postgres -t kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3 ./db_init
 
 unit-test-job:
   image: mcr.microsoft.com/dotnet/sdk:7.0-alpine
