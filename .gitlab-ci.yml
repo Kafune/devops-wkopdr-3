@@ -38,15 +38,13 @@ build-docker:
     - name: docker:20.10.8-dind
       alias: docker
       command: [ "--tls=false" ]
-    - name: docker/compose:1.23.2
-      entrypoint: [""]
   stage: build
   variables:
     DOCKER_HOST: tcp://docker:2375
     DOCKER_TLS_CERTDIR: ""
   script:
     - docker info
-    - docker compose build
+    - docker-compose build
 
 unit-test-job:   # This job runs in the test stage.
   stage: test    # It only starts when the job in the build stage completes successfully.
