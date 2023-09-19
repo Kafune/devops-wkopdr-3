@@ -9,16 +9,19 @@ services:
   app:
     container_name: dotnet-web-test
     build: .
+    image: kafune/unit-testing-using-dotnet-test-app:devops-wk-3
     ports: 
         - 5051:80
     depends_on: [ postgres ]
   postgres:
     build: ./db_init
+    image: kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3
     user: "${POSTGRES_USER}"
     environment:
       - POSTGRES_PASSWORD=secret
     volumes:
       - postgres_data:/var/lib/postgresql/data
+  
 
 volumes:
   postgres_data:

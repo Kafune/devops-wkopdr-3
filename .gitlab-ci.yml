@@ -58,15 +58,7 @@ deploy-job:
   services:
     - name: docker:24.0.5-dind
       alias: docker
-      command: [ "--tls=false" ]
-    - name: app
-      build: .
-      image: kafune/unit-testing-using-dotnet-test-app:devops-wk-3
-    - name: postgres
-      build: .
-      image: kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3
-      
-    
+      command: [ "--tls=false" ]    
   variables:
     DOCKER_HOST: tcp://docker:2375
     DOCKER_TLS_CERTDIR: ""
