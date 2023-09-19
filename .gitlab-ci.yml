@@ -39,6 +39,7 @@ build-docker:
   stage: build
   variables:
     DOCKER_TLS_CERTDIR: "/certs"
+    DOCKER_HOST: tcp://145.74.104.91:2375
   script:
     - docker compose build
 
