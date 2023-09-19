@@ -38,7 +38,7 @@ docker run -d --name gitlab-runner --restart always   -v ~/config:/etc/gitlab-ru
 s/client   gitlab/gitlab-runner:latest
 ```
 
-De images zijn in de docker registry hier te vinden voor de [app](https://hub.docker.com/repository/docker/kafune/unit-testing-using-dotnet-test-app/general) en de[database](https://hub.docker.com/repository/docker/kafune/unit-testing-using-dotnet-test-postgres/general)
+De images zijn in de docker registry hier te vinden voor de [app](https://hub.docker.com/repository/docker/kafune/unit-testing-using-dotnet-test-app/general) en de [database](https://hub.docker.com/repository/docker/kafune/unit-testing-using-dotnet-test-postgres/general)
 ## Theorie opdracht 12factor app
 
 De quote die wij hebben is:
