@@ -15,7 +15,7 @@
 # https://docs.gitlab.com/ee/development/cicd/templates.html
 # This specific template is located at:
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Getting-Started.gitlab-ci.yml
-image: docker:20.10.8
+image: docker:24.0.5
 
 default:
   before_script:
@@ -35,7 +35,7 @@ build-dotnet:       # This job runs in the build stage, which runs first.
 
 build-docker:
   services:
-    - name: docker:20.10.8-dind
+    - name: docker:24.0.5-dind
       alias: docker
       command: [ "--tls=false" ]
   stage: build
@@ -55,7 +55,7 @@ deploy-job:
   stage: deploy
   environment: production
   services:
-    - name: docker:20.10.8-dind
+    - name: docker:24.0.5-dind
       alias: docker
       command: [ "--tls=false" ]
   variables:
