@@ -44,7 +44,7 @@ build-docker:
     DOCKER_TLS_CERTDIR: ""
   script:
     - docker info
-    - docker-compose build
+    - docker compose build
 
 unit-test-job:
   image: mcr.microsoft.com/dotnet/sdk:7.0-alpine
@@ -63,7 +63,7 @@ deploy-job:
     DOCKER_HOST: tcp://docker:2375
     DOCKER_TLS_CERTDIR: ""
   script:
-    - docker compose push --no-cache
+    - docker compose push
 
 
 
