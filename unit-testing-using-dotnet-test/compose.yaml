@@ -15,7 +15,7 @@ services:
     depends_on: [ postgres ]
   postgres:
     build: ./db_init
-    image: kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3
+    # image: kafune/unit-testing-using-dotnet-test-postgres:devops-wk-3
     user: "${POSTGRES_USER}"
     environment:
       - POSTGRES_PASSWORD=secret
