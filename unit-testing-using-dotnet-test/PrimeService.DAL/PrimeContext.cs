@@ -9,7 +9,7 @@ public class PrimeContext : DbContext
 
     private string DbPath { get; }
 
-    //TODO: Fetch values from dotenv
+    //TODO: Fetch values from .env
     public PrimeContext()
     {
         DbPath = "Host=postgres;Username=postgres;Password=secret;Database=primefinding";
