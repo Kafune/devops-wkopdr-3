@@ -48,11 +48,11 @@ unit-test-job:   # This job runs in the test stage.
     - dotnet test
 
 deploy-job:
-  image: docker:stable
+  image: docker:24.0.5
   stage: deploy
   environment: production
   services:
-    - docker:stable-dind
+    - docker:24.0.5-dind
   # variables:
   #   DOCKER_TLS_CERTDIR: "/certs"
   script:
