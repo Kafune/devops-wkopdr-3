@@ -52,6 +52,7 @@ unit-test-job:   # This job runs in the test stage.
     - dotnet test
 
 deploy-job:
+  image: mcr.microsoft.com/dotnet/sdk:7.0-alpine
   stage: deploy
   environment: production
   services:
