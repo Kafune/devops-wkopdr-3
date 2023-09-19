@@ -32,9 +32,9 @@ build-dotnet:       # This job runs in the build stage, which runs first.
     - dotnet publish -c release -o /app --no-restore
 
 build-docker:
-  image: docker:stable
+  image: docker:24.0.5
   services:
-    - docker:stable-dind
+    - docker:24.0.5-dind
   stage: build
   variables:
     DOCKER_TLS_CERTDIR: "/certs"
