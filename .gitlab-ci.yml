@@ -39,7 +39,6 @@ build-docker:
   variables:
     DOCKER_TLS_CERTDIR: "/certs"
   script:
-    - docker info
     - docker compose build
 
 unit-test-job:   # This job runs in the test stage.
